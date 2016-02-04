@@ -62,4 +62,14 @@ public class ApplicationController {
         return  Results.json().render(g);
     }
 
+    public Result newGame(Context context, Game g) {
+
+        g = new Game();
+        g.buildDeck();
+        g.shuffle();
+        g.dealFour();
+        return Results.json().render(g);
+    }
+
+
 }
