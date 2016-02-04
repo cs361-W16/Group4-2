@@ -110,9 +110,11 @@ public class Game {
 
 
     public void move(int colFrom, int colTo) {
-        Card cardToMove = getTopCard(colFrom);
-        this.removeCardFromCol(colFrom);
-        this.addCardToCol(colTo,cardToMove);
+        if (!colHasCards(colTo)) {
+            Card cardToMove = getTopCard(colFrom);
+            this.removeCardFromCol(colFrom);
+            this.addCardToCol(colTo, cardToMove);
+        }
     }
 
     private void addCardToCol(int colTo, Card cardToMove) {
