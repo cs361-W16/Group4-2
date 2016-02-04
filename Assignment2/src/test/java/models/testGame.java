@@ -60,6 +60,7 @@ public class testGame {
         g.customDeal(0,3,6,9);
         g.remove(2);
         assertEquals(0,g.cols.get(2).size());
+        assertEquals(1, g.score);
     }
 
 

@@ -13,39 +13,16 @@ public class Game {
 
     public java.util.List<java.util.List<Card>> cols = new ArrayList<>();
 
+    public int score;
+
 
     public Game(){
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
         cols.add(new ArrayList<Card>());
+        score = 0;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //I like space between my methods
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -64,24 +41,6 @@ public class Game {
             deck.add(new Card(i,Suit.Spades));
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-    //I like space between my methods
-
-
-
-
-
 
 
 
@@ -133,6 +92,7 @@ public class Game {
             }
             if (removeCard) {
                 this.cols.get(columnNumber).remove(this.cols.get(columnNumber).size() - 1);
+                score += 1;
             }
         }
     }
