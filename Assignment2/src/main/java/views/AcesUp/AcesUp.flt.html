@@ -152,6 +152,9 @@ $.ajax({
   success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
         game = data;
         display(data);},
+  error: function (jqXHR) {
+        alert("There is no card left!");
+  },
   contentType:"application/json; charset=utf-8",
   dataType:"json",
 });
@@ -179,6 +182,9 @@ data: JSON.stringify(game),
 success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
 game = data;
 display(data);},
+error: function (jqXHR) {
+        alert("You can't remove this card");
+  },
 contentType:"application/json; charset=utf-8",
 dataType:"json",
 });
@@ -210,6 +216,11 @@ $.ajax({
   success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
         game = data;
         display(data);},
+
+  error: function (jqXHR) {
+        alert("You can't move card here!");
+  },
+
   contentType:"application/json; charset=utf-8",
   dataType:"json",
 });
@@ -218,7 +229,7 @@ $.ajax({
 
 </script>
 
-
+<!--the move and remove's error checking doesn't work, the deal's error checking works -->
 
 </body>
 </html>
