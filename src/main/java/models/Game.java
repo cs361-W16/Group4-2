@@ -58,7 +58,7 @@ public class Game {
             else if (i == 1) name = "Ace ";
             else name = Integer.toString(i) + " ";
             deck.add(new Card(i,Suit.Swords, name));
-            deck.add(new Card(i,Suit.Hearts, name));
+            deck.add(new Card(i,Suit.Clubs, name));
             deck.add(new Card(i,Suit.Cups, name));
             deck.add(new Card(i,Suit.Coins, name));
         }
