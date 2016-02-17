@@ -45,6 +45,15 @@ public class ApplicationController {
         return Results.json().render(g);
     }
 
+    public Result gameSpanishGet(){
+        Game g = new Game();
+        g.buildSpanishDeck();
+        g.shuffle();
+        g.dealFour();
+
+        return Results.json().render(g);
+    }
+
     public Result dealPost(Context context, Game g) {
         if(context.getRequestPath().contains("deal")){
             g.dealFour();
@@ -70,6 +79,13 @@ public class ApplicationController {
         g.dealFour();
         return Results.json().render(g);
     }
+    public Result newSpanishGame(Context context, Game g) {
 
+        g = new Game();
+        g.buildSpanishDeck();
+        g.shuffle();
+        g.dealFour();
+        return Results.json().render(g);
+    }
 
 }
