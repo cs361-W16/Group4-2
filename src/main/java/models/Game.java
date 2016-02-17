@@ -34,21 +34,33 @@ public class Game {
 
 
     public void buildDeck() {
+        String name;
         for(int i = 2; i < 15; i++){
-            deck.add(new Card(i,Suit.Clubs));
-            deck.add(new Card(i,Suit.Hearts));
-            deck.add(new Card(i,Suit.Diamonds));
-            deck.add(new Card(i,Suit.Spades));
+            if (i == 14) name = "Ace ";
+            else if (i == 13) name = "King ";
+            else if (i == 12) name = "Queen ";
+            else if (i == 11) name = "Jack ";
+            else name = Integer.toString(i) + " ";
+            deck.add(new Card(i,Suit.Clubs, name));
+            deck.add(new Card(i,Suit.Hearts, name));
+            deck.add(new Card(i,Suit.Diamonds, name));
+            deck.add(new Card(i,Suit.Spades, name));
         }
     }
 
     public void buildSpanishDeck() {
+        String name;
         //1 for Ace, 8 for Jack, 9 for Knight, 10 for King
         for(int i = 1; i < 11; i++){
-            deck.add(new Card(i,Suit.Swords));
-            deck.add(new Card(i,Suit.Hearts));
-            deck.add(new Card(i,Suit.Cups));
-            deck.add(new Card(i,Suit.Coins));
+            if (i == 10) name = "King ";
+            else if (i == 9) name = "Knight ";
+            else if (i == 8) name = "Jack ";
+            else if (i == 1) name = "Ace ";
+            else name = Integer.toString(i) + " ";
+            deck.add(new Card(i,Suit.Swords, name));
+            deck.add(new Card(i,Suit.Hearts, name));
+            deck.add(new Card(i,Suit.Cups, name));
+            deck.add(new Card(i,Suit.Coins, name));
         }
     }
 
