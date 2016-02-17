@@ -105,7 +105,9 @@
             <input type="text" id="from_col"  /> to <input type="text" id="to_col"  /><br> <button id="moveButton">Move</button>
         </p>
         <p>
-            <button id="newGameButton">Reset</button>
+            <span id="version">New Game:</span><br>
+            <button id="newGameButton">English</button>
+            <button id="newSpanishGameButton">Spanish</button>
         </p>
     </div>
 </div>
@@ -115,6 +117,8 @@ var game;
 
 function display(game) {
 console.log(game);
+
+$( '#score' ).html(game.score);
 
 $( '.columnOfCards .cardLocation' ).html("");
 
@@ -164,6 +168,19 @@ $("#newGameButton").click(function(){
 $.ajax({
   type: "POST",
   url: "/newGame",
+  data: JSON.stringify(game),
+  success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+        game = data;
+        display(data);},
+  contentType:"application/json; charset=utf-8",
+  dataType:"json",
+});
+});
+
+$("#newSpanishGameButton").click(function(){
+$.ajax({
+  type: "POST",
+  url: "/newSpanishGame",
   data: JSON.stringify(game),
   success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
         game = data;
