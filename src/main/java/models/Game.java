@@ -42,7 +42,15 @@ public class Game {
         }
     }
 
-
+    public void buildSpanishDeck() {
+        //1 for Ace, 8 for Jack, 9 for Knight, 10 for King
+        for(int i = 1; i < 11; i++){
+            deck.add(new Card(i,Suit.Swords));
+            deck.add(new Card(i,Suit.Hearts));
+            deck.add(new Card(i,Suit.Cups));
+            deck.add(new Card(i,Suit.Coins));
+        }
+    }
 
 
 
