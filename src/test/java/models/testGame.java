@@ -23,6 +23,13 @@ public class testGame {
     }
 
     @Test
+    public void testGameBuildSpanishDeck(){
+        Game g = new Game();
+        g.buildSpanishDeck();
+        assertEquals(40,g.deck.size());
+    }
+
+    @Test
     public void testGameInit(){
         Game g = new Game();
         g.buildDeck();
@@ -63,6 +70,16 @@ public class testGame {
         assertEquals(1, g.score);
     }
 
+    @Test
+    public void testSpanishDeckSuit(){
+        Game g = new Game();
+        g.buildSpanishDeck();
+        g.customDeal(0,3,6,9);
+        assertEquals("1Swords",g.cols.get(0).get(0).toString());
+        assertEquals("2Swords",g.cols.get(1).get(0).toString());
+        assertEquals("3Swords",g.cols.get(2).get(0).toString());
+        assertEquals("4Swords",g.cols.get(3).get(0).toString());
+    }
 
 
 }
